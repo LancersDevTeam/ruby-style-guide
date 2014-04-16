@@ -148,11 +148,8 @@ Translations of the guide are available in the following languages:
   class FooError < StandardError
   end
 
-  # okish
-  class FooError < StandardError; end
-
   # good
-  FooError = Class.new(StandardError)
+  class FooError < StandardError; end
   ```
 
 * Avoid single-line methods. Although they are somewhat popular in the
@@ -213,9 +210,6 @@ Translations of the guide are available in the following languages:
   strings. For hash literals two styles are considered acceptable.
 
   ```Ruby
-  # good - space after { and before }
-  { one: 1, two: 2 }
-
   # good - no space after { and before }
   {one: 1, two: 2}
   ```
@@ -231,9 +225,6 @@ Translations of the guide are available in the following languages:
   ```Ruby
   # good - no spaces
   "string#{expr}"
-
-  # ok - arguably more readable
-  "string#{ expr }"
   ```
 
   The first style is extremely more popular and you're generally
@@ -428,19 +419,6 @@ Translations of the guide are available in the following languages:
       .four
     ```
 
-  * **(Option B)** When continuing a chained method invocation on another line,
-    include the `.` on the first line to indicate that the
-    expression continues.
-
-    ```Ruby
-    # bad - need to read ahead to the second line to know that the chain continues
-    one.two.three
-      .four
-
-    # good - it's immediately clear that the expression continues beyond the first line
-    one.two.three.
-      four
-    ```
 
   A discussion on the merits of both alternative styles can be found
   [here](https://github.com/bbatsov/ruby-style-guide/pull/176).
